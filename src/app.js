@@ -4,10 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue ({
     el: "#app",
     data: {
-      todos: ["Unload dishwasher", "Load laundry", "Put away shopping"],
+      toDos: ["Unload dishwasher", "Load laundry", "Put away shopping"],
+      newToDo: "",
     },
-    // methods: {
-
-    // },
+    methods: {
+      addItem: function () {
+        this.toDos.push(this.newToDo);
+        this.newToDo = "";
+      }
+    },
   });
 });
